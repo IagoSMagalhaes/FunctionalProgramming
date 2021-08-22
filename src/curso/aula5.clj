@@ -13,7 +13,7 @@
 (println "Chaves são:" (keys estoque))
 (println "Valores são:" (vals estoque))
 
-; keyword
+; keyword!
 ; :mochila
 (def estoque {:mochila  10
               :camiseta 5})
