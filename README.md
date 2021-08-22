@@ -1,202 +1,325 @@
-# curso
+# Readme
 
-A Clojure library designed to ... well, that part is up to you.
+* [Sobre](#Sobre)
+* [Tabela de Conteudo](#tabela-de-conteudo)
+* [Instalação](#instalacao)
+* [Como usar](#como-usar)
+    * [Pre Requisitos](#pre-requisitos)
+    * [Local files](#local-files)
+    * [Remote files](#remote-files)
+    * [Multiple files](#multiple-files)
+    * [Combo](#combo)
+* [Tests](#testes)
+* [Tecnologias](#tecnologias)
 
-# RESUMO
 
-Módulo: Introdução a programção funcional
+# Módulo: Introdução a programação funcional
 
 ## Aula 1 Primeiras Funções
 
-### Preparando Ambiente
+#### - Preparando Ambiente
 
-### Funções e vetores def
+#### - Funções e vetores def
 
-### Funções e parametros
+#### - Funções e parametros
 
-* Mostrar uma mensagem na tela com o comando println;
 
-  (println "Bem vindo ao sistema de estoque")
 
-* Que toda invocação de função colocamos parênteses entre ela;
- 
-* Definir uma variável global com (def sua variavel );
+##### * Mostrar uma mensagem na tela com o comando println;
 
-  (def total-de-produtos 15)
- 
-* Criar um vetor;
+    (println "Bem vindo ao sistema de estoque")
 
-  (def estoque ["Camiseta","Calça"])
 
-* Que para o Clojure a vírgula é considerada um espaço;
+##### * Que toda invocação de função colocamos parênteses entre ela;
 
-* Contar quantos elementos tem em um vetor com o count;
 
-* Adicionar elementos ao vetor com o conj;
-  (conj estoque "Cadeira")
+##### * Definir uma variável global com (def sua variavel );
 
-* Que o Clojure é imutável;
+    (def total-de-produtos 15)
 
-* Criar função com defn.
 
+##### * Criar um vetor;
+
+    (def estoque ["Camiseta","Calça"])
+
+
+##### * Que para o Clojure a vírgula é considerada um espaço;
+
+
+##### * Contar quantos elementos tem em um vetor com o count;
+
+
+##### * Adicionar elementos ao vetor com o conj;
+
+    (conj estoque "Cadeira")
+
+
+##### * Que o Clojure é imutável;
+
+
+##### * Criar função com defn.
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Aula 2 Símbolos e condicionais
 
-### Simbolos locais versus globais ao namespace e a existencia de bigint e bigdecimal
+#### - Simbolos locais versus globais ao namespace e a existencia de bigint e bigdecimal
 
-### Let múltiplo e condicionais
+#### - Let múltiplo e condicionais
 
-* Definir uma variável com def ela tem o escopo global, dependendo do namespace;
+##### * Definir uma variável com def ela tem o escopo global, dependendo do namespace;
 
-* Algumas boas práticas com Clojure;
 
-* Criar uma variável de escopo local com o let;
+##### * Algumas boas práticas com Clojure;
 
-* Utilizar o class para descobrir o tipo da variável;
 
-* Trabalhar com condicionais if;
-* 
-  (if nil "verdadeiro" "falso")
-  (defn valor-descontado
-   "Retorna o valor com desconto de 10% se o valor bruto for estritamente maior que 100."
-   [valor-bruto]
-   (if (> valor-bruto 100)
-    (let [taxa-de-desconto (/ 10 100)
-          desconto (* valor-bruto taxa-de-desconto)]
-      (println "Calculando desconto de" desconto)
-      (- valor-bruto desconto))
-     valor-bruto))
+##### * Criar uma variável de escopo local com o let;
 
-* Que o nil(Nulo) é considerado false dentro do if.
 
+##### * Utilizar o class para descobrir o tipo da variável;
+
+    (defn imprime-e-15 [valor]
+     (println "valor" (class valor) valor)
+     15)
+
+
+##### * Trabalhar com condicionais if;
+
+
+    (if nil "verdadeiro" "falso")
+    (defn valor-descontado
+    "Retorna o valor com desconto de 10% se o valor bruto for estritamente maior que 100."
+    [valor-bruto]
+    (if (> valor-bruto 100)
+        (let [taxa-de-desconto (/ 10 100)
+              desconto (* valor-bruto taxa-de-desconto)]
+          (println "Calculando desconto de" desconto)
+          (- valor-bruto desconto))
+         valor-bruto))
+
+
+
+##### * Que o nil(Nulo) é considerado false dentro do if.
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Aula 3 Funções anônimas e lambdas
 
-### Intellij, Leiningen e atalhos
-### Predicados, when e binding em tempo de execução
-### Funções como parametros, funções anonimas e lambdas
+#### - Intellij, Leiningen e atalhos
 
-* Utilizar o plugin Cursive;
+#### - Predicados, when e binding em tempo de execução
 
-* O que é o namespace;
+#### - Funções como parametros, funções anonimas e lambdas
 
-* Atalhos do Intellij;
+##### * Utilizar o plugin Cursive;
 
-* Utilizar o ; para comentar a linha;
 
-* O que são predicates;
+##### * O que é o namespace;
 
-* Fazer uma função chamar a outra;
 
-* Criar uma função anônima;
+##### * Atalhos do Intellij;
 
-* Utilizar % para fazer um função lambda.
+
+##### * Utilizar o ; para comentar a linha;
+
+
+##### * O que são predicates;
+
+
+##### * Fazer uma função chamar a outra;
+
+
+##### * Criar uma função anônima;
+
+
+##### * Utilizar % para fazer um função lambda.
 
     (println (valor-descontado #(> % 100) 100))
 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 ## Aula 4 Primeiros passos com coleções
 
-### Vetores, get e updates
-### Map e Filter
-### Reduce e variações
+#### - Vetores, get e updates
 
-* Utilizar o get para evitar exceções;
+#### - Map e Filter
 
-  (println (get precos 2))
+#### - Reduce e variações
 
-* Definir o valor padrão de retorno do get;
+##### * Utilizar o get para evitar exceções;
 
-  (println "valor padrão 0" (get precos 17 0))
+    (println (get precos 2))
 
-* Utilizar a função inc para somar o número atual mais um;  
 
-* Utilizar a função update para apenas retornar um vetor com um valor alterado;
+##### * Definir o valor padrão de retorno do get;
 
-  (defn soma-3
-   [valor]
-   (println "estou somando 3 em" valor)
-   (+ valor 3))
+    (println "valor padrão 0" (get precos 17 0))
 
-  (println (update precos 0 soma-3))
 
-* Utilizar a função map para passar por todos os elementos;
+##### * Utilizar a função inc para somar o número atual mais um;  
 
-  (println "map" (map valor-descontado precos))
 
-* Utilizar a função filter para fazer a filtragem de elementos;
+##### * Utilizar a função update para apenas retornar um vetor com um valor alterado;
 
-  (defn aplica-desconto?
-   [valor-bruto]
-   (> valor-bruto 100))
+    (defn soma-3
+       [valor]
+    (println "estou somando 3 em" valor)
+    (+ valor 3))
 
-  (println "filter" (filter aplica-desconto? precos))
+    (println (update precos 0 soma-3))
+    (println (update-in pedido [:mochila :quantidade] inc))
 
-* Utilizar a função reduce para reduzir valores.
 
-  (println (reduce minha-soma precos))
+##### * Utilizar a função map para passar por todos os elementos;
 
+    (println "map" (map valor-descontado precos))
+
+
+##### * Utilizar a função filter para fazer a filtragem de elementos;
+
+    (defn aplica-desconto?
+    [valor-bruto]
+    (> valor-bruto 100))
+
+    (println "filter" (filter aplica-desconto? precos))
+
+
+##### * Utilizar a função reduce para reduzir valores.
+
+    (defn minha-soma
+        [valor-1 valor-2]
+        (println "somando" valor-1 valor-2)
+        (+ valor-1 valor-2))
+
+    (println (reduce minha-soma precos))
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Aula 5 Conhecendo mapas e threading
 
-### Mapas, vals e keys
-### Mapas aninhados update-in e threading first
+#### - Mapas, vals e keys
 
-* Utilizar um Map(HashMap);
+#### - Mapas aninhados update-in e threading first
 
-  (def estoque {"Mochila" 10 "Camiseta" 5})
+    thread first, o parâmetro é lido antes da função a ser executada
 
-* Utilizar a função count;
+##### * Utilizar um Map(HashMap);
 
-  (println "Temos" (count estoque) "elementos")
+    (def estoque {"Mochila" 10 "Camiseta" 5})
 
-* Utilizar a função keys para devolver as chaves que o map possui;
+    (def pedido {:mochila  {:quantidade 2, :preco 80}
+                 :camiseta {:quantidade 3, :preco 40}})
 
-  (println "Chaves são:" (keys estoque))
-  (println "Valores são:" (vals estoque))
 
-* Utilizar a função assoc para associar um valor ao map;
+##### * Utilizar a função count;
 
-  (def pedido (assoc pedido :chaveiro {:quantidade 1, :preco 10}))
+    (println "Temos" (count estoque) "elementos")
+
+
+##### * Utilizar a função keys para devolver as chaves que o map possui;
+
+      (println "Chaves são:" (keys estoque))
+      (println "Valores são:" (vals estoque))
+
+
+##### * Utilizar a função assoc para associar um valor ao map;
+
+      (def pedido (assoc pedido :chaveiro {:quantidade 1, :preco 10}))
+
   
-* O que é threading.
+##### * O que é threading.
 
-  (println (-> pedido
-               :mochila
-               :quantidade))
+    (println (-> pedido
+                   :mochila
+                   :quantidade))
 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Aula 6
 
-### Destruct de sequencia, map, reduce em mapas e thread last
-### Filtrando mapas e criando composições com comp
-### Map reduce
+#### - Destruct de sequencia, map, reduce em mapas e thread last
 
-O que aprendemos nesta aula:
+    (defn preco-dos-produtos [[_ valor]]
+     (* (:quantidade valor) (:preco valor)))
 
-* Utilizar o destruct para um dicionário;
-
-* Utilizar o Thread last;
-
-* Utilizar o map, reduce e filter em um mapa;
-
-* Criar composição com o comp;
+    (println (map preco-dos-produtos pedido))
+    (println (reduce + (map preco-dos-produtos pedido)))
 
 
-## Usage
+    (defn total-do-pedido [pedido]
+    (reduce + (map preco-dos-produtos pedido)))
+    (println (total-do-pedido pedido))
 
-FIXME
+    (defn total-do-pedido [pedido]
+     (-> pedido
+         (map preco-dos-produtos)
+         (reduce +))
+     (reduce + (map preco-dos-produtos pedido)))
 
-## License
+    (println (total-do-pedido pedido))
 
-Copyright © 2019 FIXME
+    (defn preco-total-do-produto [produto]
+    (* (:quantidade produto) (:preco produto)))
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+    (defn total-do-pedido
+     [pedido]
+    (->> pedido
+         vals
+         (map preco-total-do-produto)
+         (reduce +))
+    (reduce + (map preco-dos-produtos pedido)))
+
+    (println (total-do-pedido pedido))
+
+
+
+#### - Filtrando mapas e criando composições com comp
+
+    (defn gratuito?
+      [[_ item]]
+      (<= (get item :preco 0) 0))
+      (println "Filtrando gratuitos")
+      (println (filter gratuito? pedido))
+
+(println (filter gratuito? pedido))
+
+##### * Utilizar o destruct para um dicionário;
+
+
+
+##### * Utilizar o Thread last;
+
+    (defn total-do-pedido [pedido]
+    (->> pedido
+         (map preco-dos-produtos)
+         (reduce +))
+    (reduce + (map preco-dos-produtos pedido)))
+
+
+##### * Utilizar o map, reduce e filter em um mapa;
+
+    (def pedido {:mochila  {:quantidade 2, :preco 80}
+                 :camiseta {:quantidade 3, :preco 40}
+                 :chaveiro {:quantidade 1}})
+
+
+##### * Criar composição com o comp;
+
+
+
+# CONCLUSAO
+
+Começamos falando sobre a sintaxe da linguagem, invocando funções e aprendendo que isso ocorre de maneira um pouco diferente do que estamos acostumados em outras linguagens. Nesse ponto, aprendemos que é possível criar símbolos e atribuir valores a eles, sejam eles números escalares, strings ou mesmo funções - inclusive, é possível passar uma função como parâmetro de outra função, o que chamamos de high order functions.
+
+Prosseguindo, discutimos como definir funções e receber parâmetros, e passamos a utilizar o IntelliJ, que facilitou bastante a construção dos nossos códigos. Além disso, ele nos trouxe o REPL, que, utilizando um projeto criado pelo Leiningen, nos permitiu executar os nossos testes.
+
+Aprendemos também a criar símbolos locais, trabalhar com condicionais, isolar comportamentos e compor funções por meio de outras funções. Ao adentrarmos o mundo das coleções, mais especificamente vetores e mapas, conhecemos a tríade de funções mais importantes para o trabalho com esse tipo de objeto: (map), (reduce) e (filter). Também descobrimos como adicionar, remover ou alterar valores nas nossas coleções, sempre pensando em imutabilidade - ou seja, as funções não alteram os valores referenciados por um símbolo, apenas retorna um novo mapa ou vetor com as mudanças atribuídas.
+
+Mais adiante, trabalhamos não só com mapas simples, de "uma dimensão", como também com mapas mais complexos, cujos valores são outros mapas. Ao longo desse processo, questões de boas práticas, legibilidade e como trabalhar com funções foram aparecendo e sendo discutidas.
+
+Agora que temos uma noção melhor da linguagem, conseguiremos conectar esses aprendizados com os nossos conhecimentos de estrutura de dados, algoritmos e outros conteúdos, de modo a utilizarmos as estruturas corretas no momento adequado para trazer os benefícios desejados. Nos cursos futuros, conheceremos ainda outros benefícios de trabalhar com o Clojure.
