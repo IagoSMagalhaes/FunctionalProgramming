@@ -6,13 +6,13 @@ A Clojure library designed to ... well, that part is up to you.
 
 Módulo: Introdução a programção funcional
 
-##Aula 1 Primeiras Funções
+## Aula 1 Primeiras Funções
 
-###Preparando Ambiente
+### Preparando Ambiente
 
-###Funções e vetores def
+### Funções e vetores def
 
-###Funções e parametros
+### Funções e parametros
 
 * Mostrar uma mensagem na tela com o comando println;
   (println "Bem vindo ao sistema de estoque")COPIAR
@@ -37,11 +37,11 @@ Módulo: Introdução a programção funcional
 * Criar função com defn.
 
 
-##Aula 2 Símbolos e condicionais
+## Aula 2 Símbolos e condicionais
 
-###Simbolos locais versus globais ao namespace e a existencia de bigint e bigdecimal
+### Simbolos locais versus globais ao namespace e a existencia de bigint e bigdecimal
 
-###Let múltiplo e condicionais
+### Let múltiplo e condicionais
 
 * Definir uma variável com def ela tem o escopo global, dependendo do namespace;
 
