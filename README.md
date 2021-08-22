@@ -7,8 +7,11 @@ A Clojure library designed to ... well, that part is up to you.
 Módulo: Introdução a programção funcional
 
 ##Aula 1 Primeiras Funções
+
 ###Preparando Ambiente
+
 ###Funções e vetores def
+
 ###Funções e parametros
 
 * Mostrar uma mensagem na tela com o comando println;
@@ -35,7 +38,9 @@ Módulo: Introdução a programção funcional
 
 
 ##Aula 2 Símbolos e condicionais
+
 ###Simbolos locais versus globais ao namespace e a existencia de bigint e bigdecimal
+
 ###Let múltiplo e condicionais
 
 * Definir uma variável com def ela tem o escopo global, dependendo do namespace;
@@ -62,8 +67,9 @@ Módulo: Introdução a programção funcional
 
 
 ##Aula 3
-###Simbolos locais versus globais ao namespace e a existencia de bigint e bigdecimal
-###Let múltiplo e condicionais
+
+###
+###
 
 ##Aula 4
 ###
