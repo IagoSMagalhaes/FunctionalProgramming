@@ -13,62 +13,43 @@
 * [Tecnologias](#tecnologias)
 
 
-# Módulo: Introdução a programação funcional
+# Módulo: Introdução ao Datomic: Um banco cronológico
 
-## Aula 1 Primeiras Funções
+## Aula 1 Schema e transações
 
-#### - Preparando Ambiente
+#### - Introdução
 
-#### - Funções e vetores def
+O Datomic não armazena os dados da maneira tradicional que comumente aprendemos, os bancos de dados de entidade relacional que formam grandes tabelas com vários campos e várias linhas. Essas não são as únicas maneiras de fazer banco de dados. Existem diversas outras como chave-valor, documento, grafo, entre outras.
 
-#### - Funções e parametros
+O Datomic tem uma abordagem diferente. Há dois grandes pontos que vamos ver a partir deste primeiro curso. Um delas é que tudo que se faz neste banco se acumula, ou seja, fica armazenado num histórico. Ele não vai apagar o passado, então quando apagarmos um produto do sistema, ele não apaga de verdade. Essas informações ficam escondidas, mas ninguém acessa, ninguém percebe que está ali, todo mundo vê o banco na sua última versão.
 
+As informações ficam armazenadas para haver a possibilidade de voltar no tempo e fazer uma auditoria se quisermos, e verificar por quem, quando e por que um dado foi apagado. Tudo isso estará armazenado no banco.
 
+Conseguimos até fazer simulações do futuro, de como estaria o banco se fizéssemos certas transações devido ao armazenamento desse log.
 
-##### * Mostrar uma mensagem na tela com o comando println;
+Também por não trabalhar com várias tabelas, temos uma grande mudança na maneira de pensar em que conseguimos aplicar ferramentas genéricas a uma única tabela.
 
-    (println "Bem vindo ao sistema de estoque")
+Poderemos criar comportamentos para diversos tipos de entidades de uma vez só de uma maneira mais simples com o Datomic Cloud pois isso será natural para ele.
 
-  Os métodos são sempre encapsulados por parenteses e os espaços funcionam como vetores.
-  [0] - println -> Método que será executado
-  [1....] - parametros que o método recebe
-  (println "Bem vindo ao sistema de estoque" "parametro2" "parametro3")
+Passaremos por seis aulas em que vamos acessar o banco, criar dados, esquemas, incluir dados, entender como eles estarão armazenados, fazer queries cada vez mais complexas, isolar nosso código das queries e fazer diversos acessos a medida que desenvolvemos essas queries de maneira mais complexa, conforme entendemos como funciona o Datomic.
 
-##### * Que toda invocação de função colocamos parênteses entre ela;
+#### - Instalação e configuração
 
+Nosso primeiro passo, então, será baixar e instalar o Datomic. Para isso, vamos em datomic.com/get-datomic.html. Baixaremos a versão Starter, que é equivalente a versão Pro, mas gratuita.
 
-##### * Definir uma variável global com (def sua variavel );
+Existem duas verões gratuitas do Datomic, a Starter e a Free, que tem outros tipos de restrições. Como a Starter é equivalente a Pro, que talvez você queira adquirir quando for utilizar o Datomic em maior escala, faremos o download dessa.
 
-    (def total-de-produtos 15)
+#### - Schema e transacionando dados
 
-  Sempre o primeiro argumento define o que será executado, DEF -> Definir uma variavel
+##### * o que são schemas
 
-##### * Criar um vetor;
+##### * como transacionar schemas
 
-    (def estoque ["Camiseta","Calça"])
+##### * como transacionar dados
 
+##### * queries simples
 
-##### * Que para o Clojure a vírgula é considerada um espaço;
-
-
-##### * Contar quantos elementos tem em um vetor com o count;
-
-
-##### * Adicionar elementos ao vetor com o conj;
-
-    (conj estoque "Cadeira")
-    (def estoque (conj estoque "Cadeira"))
-
-  Clojure segue o mesmo conceito de imutabilidade que o Kotlin
-
-##### * Que o Clojure é imutável;
-
-
-##### * Criar função com defn.
-
-
-  defn -> Atalho para definir um método/função
-  defn imprime-mensagem [] -> Precisa obrigatoriamente incluir o vetor de parametros que a função recebe
+##### * o banco e seus snapshots
 
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -83,10 +64,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 ##### * Algumas boas práticas com Clojure;
-
-    Criar funções com nomeclaturas no hiperativo, ex:
-    Funçõpes simples "puras" como apenas retornar um valor -> A função é pura quando ela tem sempre o msm resultado, o resultado dela é só o RETORNO dela, só retorna 90, não imprime uma mensagem (MATEMATICAMENTE PURA)
-    Vantagens: Concorrencia, Paralelismo
 
 
 ##### * Criar uma variável de escopo local com o let;
@@ -114,18 +91,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
          valor-bruto))
 
 
- (/ 10 100) -> Significa resultado de 10/100
-
-  Por default o ELSE retorna null (Nill)
-
-  Tudo pode ser uma função -> Uma String, um vetor, uma condição, um objeto FUNÇÃO SÃO COISAS
-
-  Símbolos que referenciam funções são chamados : "first class citizens"
-
-  Funções que recebem ou retornam funções são chamadas: "higher order functions"
-
-  Função anonima -> Evite usar funções anonimas, menos caracteres mas mais complexidade na compreenssao
-
 
 ##### * Que o nil(Nulo) é considerado false dentro do if.
 
@@ -147,14 +112,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 ##### * Atalhos do Intellij;
-
-      SHIFT + SHIFT -> Find
-      CTRL + SHIFT + J -> Expulsa proxima forma
-      CTRL + SHIFT + K -> Absorve proxima forma
-      CTRL + SHIFT + P -> Executa só a linha selecionada
-      CTRL + SHIFT + E -> Executa arquivo
-      CTRL + 1  -> Esconde Project
-      CTRL + SHIFT +   ->
 
 
 ##### * Utilizar o ; para comentar a linha;
@@ -247,8 +204,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     (def pedido {:mochila  {:quantidade 2, :preco 80}
                  :camiseta {:quantidade 3, :preco 40}})
-
-  Apesar do estoque não ser um método, como ele é um vetor, o parametro seguinte tenta acessar o indice igual a .get(0) 
 
 
 ##### * Utilizar a função count;
