@@ -487,12 +487,6 @@ Agora que temos uma noção melhor da linguagem, conseguiremos conectar esses ap
 ##### * Agrupar dados;
 
 
-## Aula 3 Outras funções com maps
-
-#### - Agrupando e trabalhando em esquemas de mapas mais complexos;
-
-
-
 ## Aula 4 Ordem e ordenação
 
 #### - Ordenação, reverse, extraindo lógica
