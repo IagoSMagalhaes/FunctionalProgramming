@@ -21,7 +21,7 @@
 
 O Datomic não armazena os dados da maneira tradicional que comumente aprendemos, os bancos de dados de entidade relacional que formam grandes tabelas com vários campos e várias linhas. Essas não são as únicas maneiras de fazer banco de dados. Existem diversas outras como chave-valor, documento, grafo, entre outras.
 
-O Datomic tem uma abordagem diferente. Há dois grandes pontos que vamos ver a partir deste primeiro curso. Um delas é que tudo que se faz neste banco se acumula, ou seja, fica armazenado num histórico. Ele não vai apagar o passado, então quando apagarmos um produto do sistema, ele não apaga de verdade. Essas informações ficam escondidas, mas ninguém acessa, ninguém percebe que está ali, todo mundo vê o banco na sua última versão.
+O Datomic tem uma abordagem diferente. Há dois grandes pontos que vamos ver a partir deste primeiro introductionFuncionalProgramming.curso. Um delas é que tudo que se faz neste banco se acumula, ou seja, fica armazenado num histórico. Ele não vai apagar o passado, então quando apagarmos um produto do sistema, ele não apaga de verdade. Essas informações ficam escondidas, mas ninguém acessa, ninguém percebe que está ali, todo mundo vê o banco na sua última versão.
 
 As informações ficam armazenadas para haver a possibilidade de voltar no tempo e fazer uma auditoria se quisermos, e verificar por quem, quando e por que um dado foi apagado. Tudo isso estará armazenado no banco.
 

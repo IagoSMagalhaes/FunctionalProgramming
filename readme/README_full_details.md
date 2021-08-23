@@ -19,7 +19,7 @@
 
 #### - Introdução
 
-Bem vindo(a) ao nosso curso de introdução ao Clojure! Aqui trabalharemos de maneira funcional, tentando entender quais são as vantagens, as desvantagens, as facilidades e as dificuldades que uma abordagem funcional e imutável nos traz utilizando a linguagem Clojure. Devemos ter em mente o Clojure não é limitado a uma abordagem 100% funcional, sendo possível trazer componentes de orientação a objetos, por exemplo, que vieram principalmente da Virtual Machine por trás do Clojure, que é o Java.
+Bem vindo(a) ao nosso introductionFuncionalProgramming.curso de introdução ao Clojure! Aqui trabalharemos de maneira funcional, tentando entender quais são as vantagens, as desvantagens, as facilidades e as dificuldades que uma abordagem funcional e imutável nos traz utilizando a linguagem Clojure. Devemos ter em mente o Clojure não é limitado a uma abordagem 100% funcional, sendo possível trazer componentes de orientação a objetos, por exemplo, que vieram principalmente da Virtual Machine por trás do Clojure, que é o Java.
 
 Ao longo das aulas, passaremos por diversos conceitos, como as estruturas básicas de dados utilizadas na linguagem (vetores e hashs/mapas), além de filter, reduce, criar e devolver funções, High Order Functions, funções como parâmetros, etc., ao mesmo tempo em que discutimos boas práticas e facilidades do Clojure.
 
@@ -31,7 +31,7 @@ Acesse o site https://clojure.org/guides/getting_started e execute o processo de
 
 #### - Funções e vetores def
 
-Vamos começar o nosso curso! Para instalar o Clojure, siga as intruções da atividade de instalação. Em resumo: no Mac, basta um brew install clojure; no Linux, basta baixar o arquivo TARGZ, descompactá-lo e adicioná-lo ao PATH; e no Windows, basta utilizar o instalador específico.
+Vamos começar o nosso introductionFuncionalProgramming.curso! Para instalar o Clojure, siga as intruções da atividade de instalação. Em resumo: no Mac, basta um brew install clojure; no Linux, basta baixar o arquivo TARGZ, descompactá-lo e adicioná-lo ao PATH; e no Windows, basta utilizar o instalador específico.
 
 Após a instalação, executaremos um interpretador do Clojure. Nosso primeiro objetivo é imprimirmos uma mensagem. Para isso, chamaremos a função println, que recebe alguns parâmetros - por exemplo, uma string com a mensagem "Bem vindo ao sistema de estoque". Em Closure, quando invocamos uma função, precisamos informar o nome dela e os seus vários parâmetros - nesse caso, println com um único parâmetro. Além disso, toda a invocação deve ser colocada em parênteses. Sendo assim, teremos:
 
@@ -414,7 +414,7 @@ Voltando à questão da dificuldade de lidar com esse volume de código da manei
 
 
 
-Porém, isso não é o suficiente, já que ainda é muito fácil errarmos os parênteses. Resolveremos esse problema trabalhando com IDEs como o IntelliJ, que nos dará suporte ao longo do curso.
+Porém, isso não é o suficiente, já que ainda é muito fácil errarmos os parênteses. Resolveremos esse problema trabalhando com IDEs como o IntelliJ, que nos dará suporte ao longo do introductionFuncionalProgramming.curso.
 
 
 
@@ -466,13 +466,13 @@ Após a instalação, da primeira vez que o IntelliJ é executado, seremos pergu
 
 Para podermos trabalhar com o Clojure, será necessário instalarmos um plugin chamado "Cursive", o que pode ser feito acessando "Configure > Plugins" e pesquisando por esse nome. Após a instalação, reiniciaremos a IDE.
 
-Criaremos então um novo projeto do tipo "Clojure", selecionando essa opção do lado esquerdo da tela. Dentro dela, usaremos o Leiningen, uma ferramenta que serve para criar aplicativos do tipo Clojure. O nome do projeto será "estoque" e criaremos um diretório "curso" para salvá-lo, clicando em "Finish" em seguida.
+Criaremos então um novo projeto do tipo "Clojure", selecionando essa opção do lado esquerdo da tela. Dentro dela, usaremos o Leiningen, uma ferramenta que serve para criar aplicativos do tipo Clojure. O nome do projeto será "estoque" e criaremos um diretório "introductionFuncionalProgramming.curso" para salvá-lo, clicando em "Finish" em seguida.
 
-Na nova tela, fecharemos as janelas desnecessárias. Repare que, no canto inferior direito da tela, algumas atualizações do Cursive estarão sendo feitas em segundo plano. Para acessarmos o nosso projeto, clicaremos em "1.Project" no canto esquerdo da tela. Logo no início, teremos somente um arquivo curso.iml dentro do diretório escolhido. À medida em que o projeto é propriamente criado, os outros arquivos e diretórios aparecerão na tela.
+Na nova tela, fecharemos as janelas desnecessárias. Repare que, no canto inferior direito da tela, algumas atualizações do Cursive estarão sendo feitas em segundo plano. Para acessarmos o nosso projeto, clicaremos em "1.Project" no canto esquerdo da tela. Logo no início, teremos somente um arquivo introductionFuncionalProgramming.curso.iml dentro do diretório escolhido. À medida em que o projeto é propriamente criado, os outros arquivos e diretórios aparecerão na tela.
 
-Ao longo do curso trabalharemos somente com aquilo que é interessante para nossos estudos. Em "src", por exemplo, colocaremos o nosso código fonte. Dentro dessa pasta, teremos um diretório "curso" contendo um arquivo core.clj, o núcleo do projeto, onde poderemos trabalhar. Por enquanto ele contém uma definição simples de uma função (foo), que removeremos.
+Ao longo do introductionFuncionalProgramming.curso trabalharemos somente com aquilo que é interessante para nossos estudos. Em "src", por exemplo, colocaremos o nosso código fonte. Dentro dessa pasta, teremos um diretório "introductionFuncionalProgramming.curso" contendo um arquivo core.clj, o núcleo do projeto, onde poderemos trabalhar. Por enquanto ele contém uma definição simples de uma função (foo), que removeremos.
 
-(ns curso.core)
+(ns introductionFuncionalProgramming.curso.core)
 
 (defn foo
 "I don't do a whole lot."
@@ -480,22 +480,22 @@ Ao longo do curso trabalharemos somente com aquilo que é interessante para noss
 (println x "Hello, World!"))
 Acessando "IntelliJ IDEA > Preferences" no Mac ou "File > Settings" no Windows, podemos fazer algumas configurações de visualização, como aumentar o tamanho da fonte da interface ou do editor de texto. Também é possível utilizar o atalho "Ctrl + Shift + A", ou "Command + Shift + A", para acessar o buscador dessa IDE. Depois disso, podemos pesquisar por "Increase Font Size" para aumentar em dois pontos a fonte. Esse buscador também pode ser acessado com "Shift > Shift".
 
-Note que o arquivo curso.core está utilizando o namespace curso.core. Sendo assim, da mesma forma que quando trabalhamos com o namespace user no terminal, todo o código que escrevermos nesse arquivo estará em um espaço chamado curso.core, como os packages ou namespaces de outras linguagens.
+Note que o arquivo introductionFuncionalProgramming.curso.core está utilizando o namespace introductionFuncionalProgramming.curso.core. Sendo assim, da mesma forma que quando trabalhamos com o namespace user no terminal, todo o código que escrevermos nesse arquivo estará em um espaço chamado introductionFuncionalProgramming.curso.core, como os packages ou namespaces de outras linguagens.
 
 Para começarmos a trabalhar, faremos um (println) da mensagem "Bem vindo ao sistema de estoque" e salvaremos as alterações com "Command + S" ou "Ctrl + S".
 
-(ns curso.core)
+(ns introductionFuncionalProgramming.curso.core)
 
 (println "Bem vindo ao sistema de estoque")
-Em seguida, clicaremos com o botão direito em project.clj e então em "Run 'REPL for curso'". O REPL (read-eval-print-loop) é como uma linha de comando na qual podemos executar e avaliar o nosso código durante o desenvolvimento. Já que ele funciona como um terminal, também podemos executar código diretamente da janela do REPL.
+Em seguida, clicaremos com o botão direito em project.clj e então em "Run 'REPL for introductionFuncionalProgramming.curso'". O REPL (read-eval-print-loop) é como uma linha de comando na qual podemos executar e avaliar o nosso código durante o desenvolvimento. Já que ele funciona como um terminal, também podemos executar código diretamente da janela do REPL.
 
-Quando executamos o REPL pela primeira vez, o curso.core foi carregado automaticamente, imprimindo na tela a mensagem que escrevemos. Sendo assim, todo o código que criarmos nesse arquivo será carregado toda vez que o REPL for executado.
+Quando executamos o REPL pela primeira vez, o introductionFuncionalProgramming.curso.core foi carregado automaticamente, imprimindo na tela a mensagem que escrevemos. Sendo assim, todo o código que criarmos nesse arquivo será carregado toda vez que o REPL for executado.
 
-Para continuarmos trabalhando, moveremos o arquivo aula2.clj, que criamos na aula anterior, para o diretório "src/curso". Nesse arquivo, podemos utilizar o ; para comentarmos uma linha, o que faremos com a instrução * valor-bruto 0.9.
+Para continuarmos trabalhando, moveremos o arquivo aula2.clj, que criamos na aula anterior, para o diretório "src/introductionFuncionalProgramming.curso". Nesse arquivo, podemos utilizar o ; para comentarmos uma linha, o que faremos com a instrução * valor-bruto 0.9.
 
-Antes de executarmos o arquivo, é uma boa prática do Clojure colocarmos esse código em um namespace, cujo padrão é o nome do arquivo. Como estamos dentro do diretório "curso", nosso namespace (ns) será curso.aula2.
+Antes de executarmos o arquivo, é uma boa prática do Clojure colocarmos esse código em um namespace, cujo padrão é o nome do arquivo. Como estamos dentro do diretório "introductionFuncionalProgramming.curso", nosso namespace (ns) será introductionFuncionalProgramming.curso.aula2.
 
-(ns curso.aula2)
+(ns introductionFuncionalProgramming.curso.aula2)
 Para carregarmos esse arquivo e executarmos todo o conteúdo contido nele no REPL, podemos utilizar o comando "Ctrl + Shift + F10" ou "Command + Shift + L". Devemos tomar alguns cuidados, por exemplo com o (aplica-desconto). Quando estávamos no terminal, o resultado das funções era mostrado. Agora, somente os valores que pedirmos para imprimir é que serão mostrados na tela.
 
 (println (aplica-desconto 100))
@@ -503,7 +503,7 @@ Na interface encontraremos diversas opções de execução e configuração do R
 
 Também é possível criarmos uma função, por exemplo (println), fora de uma instrução, e utilizarmos o atalho "Command + Shift + K" ("Alt + Shift + K", no Windows) para a "engolirmos" para dentro da função (println) recém-criada, o que é chamado de "slurp". Da mesma forma, o "Command + Shift + J" ("Alt + Shift + J") move a última fórmula para fora da função, o que chamamos de "barf". Esses e outros atalhos podem ser encontrados em "Edit > Structural Editing".
 
-Se quisermos executar somente uma fórmula específica, colocamos o curso nela e utilizamos o atalho Command + Shift + P. Note que esse atalho executa o código já no escopo atual, nesse caso o namespace curso.aula2. Para utilizarmos esse namespace no REPL, podemos executar (use curso.aula2).
+Se quisermos executar somente uma fórmula específica, colocamos o introductionFuncionalProgramming.curso nela e utilizamos o atalho Command + Shift + P. Note que esse atalho executa o código já no escopo atual, nesse caso o namespace introductionFuncionalProgramming.curso.aula2. Para utilizarmos esse namespace no REPL, podemos executar (use introductionFuncionalProgramming.curso.aula2).
 
 No Mac, o atalho "Command + 1" serve para ocultar a aba lateral do projeto, permitindo uma visualização melhor do nosso código. Vários desses atalhos podem ser alterados nas preferências do IntelliJ ("Preferences/Settings > Keymap").
 
@@ -511,9 +511,9 @@ No próximo vídeo voltaremos a trabalhar com código.
 
 #### - Predicados, when e binding em tempo de execução
 
-Para continuarmos a trabalhar, criaremos um novo arquivo chamado aula3.clj, no qual adicionaremos o namespace curso.aula3, além da última versão da função (valor-descontado).
+Para continuarmos a trabalhar, criaremos um novo arquivo chamado aula3.clj, no qual adicionaremos o namespace introductionFuncionalProgramming.curso.aula3, além da última versão da função (valor-descontado).
 
-(ns curso.aula3)
+(ns introductionFuncionalProgramming.curso.aula3)
 
 (defn valor-descontado
 "Retorna o valor com desconto de 10% se o valor bruto for estritamente maior que 100."
@@ -595,7 +595,7 @@ valor-bruto))
 (println (valor-descontado 1000))
 
 (println (valor-descontado 100))
-Ao longo da escrita do código, repare que, enquanto não passamos um parâmetro valor-bruto para a função (aplica-desconto?), sua chamada é sublinhada em vermelho. Colocando o mouse sobre ela, a mensagem "Incorret arity 0 for curso.aula?/aplica-desconto?" será exibida. "Arity", ou "aridade", é o número de parâmetros passados, e "aridade 0" se refere à primeira posição, ou seja, ao primeiro parâmetro. Se segurarmos "Command" (ou "Ctrl" no Windows) e clicarmos na chamada da função, seremos levados diretamente ao código fonte dela.
+Ao longo da escrita do código, repare que, enquanto não passamos um parâmetro valor-bruto para a função (aplica-desconto?), sua chamada é sublinhada em vermelho. Colocando o mouse sobre ela, a mensagem "Incorret arity 0 for introductionFuncionalProgramming.curso.aula?/aplica-desconto?" será exibida. "Arity", ou "aridade", é o número de parâmetros passados, e "aridade 0" se refere à primeira posição, ou seja, ao primeiro parâmetro. Se segurarmos "Command" (ou "Ctrl" no Windows) e clicarmos na chamada da função, seremos levados diretamente ao código fonte dela.
 
 Como resultado da execução desse código, os valores 900N e 100 serão exibidos corretamente na tela. Nossa aplicação funcona, mas o (if) está retornando true e false. Existem casos em que é muito comum que a devolução da situação contrária, ou seja, false, seja na verdade nulo, como no exemplo:
 
@@ -859,11 +859,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #### - Vetores, get e updates
 
-Continuando com o nosso recurso, repare que o IntelliJ, em algum momento, pode exibir notificações de eventos, como ter encontrado um repositório que ainda não foi indexado. Nesses casos, podemos simplesmente esconder os eventos. Para prosseguirmos, criaremos um novo arquivo aula4.clj no qual definiremos o namespace curso.aula4. Lembrando que se quisermos utilizar esse arquivo no REPL, precisamos chamar (use 'curso.aula4) para fazermos com que ele seja capaz de encontrar símbolos nesse namespace.
+Continuando com o nosso recurso, repare que o IntelliJ, em algum momento, pode exibir notificações de eventos, como ter encontrado um repositório que ainda não foi indexado. Nesses casos, podemos simplesmente esconder os eventos. Para prosseguirmos, criaremos um novo arquivo aula4.clj no qual definiremos o namespace introductionFuncionalProgramming.curso.aula4. Lembrando que se quisermos utilizar esse arquivo no REPL, precisamos chamar (use 'introductionFuncionalProgramming.curso.aula4) para fazermos com que ele seja capaz de encontrar símbolos nesse namespace.
 
 Nessa aula voltaremos a trabalhar com vetores. Começaremos definindo os precos de três produtos que possuímos.
 
-(ns curso.aula4)
+(ns introductionFuncionalProgramming.curso.aula4)
 
 (def precos [30 700 1000])
 Pressionando "Command + Shift + L" ("Alt + Shift + L" no Windows) nós carregaremos esse arquivo no REPL. Como utilizamos o namespace desse arquivo, conseguiremos imprimir o vetor precos corretamente. Repare que sempre preferiremos criar nossos códigos dentro do arquivo, ao invés de no REPL, para mantermos um histórico.
@@ -1133,7 +1133,7 @@ Nesse caso, a devolução é somente o elemento inicial:
 Já se tivermos uma sequência vazia e nenhum elemento inicial, teremos uma ArityException, já que não teremos passado o número adequado de parâmetros para a função.
 
 (println (reduce minha-soma []))
-Syntax error (ArityException) compiling at (aula4.clj:81:1). Wrong number of args (0) passed to: curso.aula4/minha-soma
+Syntax error (ArityException) compiling at (aula4.clj:81:1). Wrong number of args (0) passed to: introductionFuncionalProgramming.curso.aula4/minha-soma
 
 O mesmo erro acontece se tentarmos passar como parâmetro um vetor que definimos como vazio:
 
@@ -1202,9 +1202,9 @@ Já aprendemos a trabalhar com os tipos escalares, como inteiros, strings e doub
 
 Além dos vetores, existe um outro tipo de coleção, na qual associamos um valor a outro. Por exemplo, imagine que queremos comprar 10 mochilas e 5 camisetas. Dessa forma, queremos conectar os valores 10 e mochilas, e 5 e camisetas, em uma espécie de coleção associativa cuja implementação comum costuma ser um hashmap.
 
-Para trabalharmos com esse tipo de mapa, criaremos um novo arquivo aula5.clj com o namespace curso.aula5. Nele, definiremos um estoque que consistirá em um mapa, cuja implementação no Clojure é feita com {}. Nesse mapa teremos os elementos "Mochila" 10 e "Camiseta" 5. Por fim, faremos um (println) do nosso estoque.
+Para trabalharmos com esse tipo de mapa, criaremos um novo arquivo aula5.clj com o namespace introductionFuncionalProgramming.curso.aula5. Nele, definiremos um estoque que consistirá em um mapa, cuja implementação no Clojure é feita com {}. Nesse mapa teremos os elementos "Mochila" 10 e "Camiseta" 5. Por fim, faremos um (println) do nosso estoque.
 
-(ns curso.aula5)
+(ns introductionFuncionalProgramming.curso.aula5)
 
 (def estoque {"Mochila" 10 "Camiseta" 5})
 (println estoque)
@@ -1433,7 +1433,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #### - Destruct de sequencia, map, reduce em mapas e thread last
 
-Para continuarmos trabalhando com mapas, uma estrutura muito utilizada em Clojure, criaremos um novo arquivo aula6.clj com o namespace curso.aula6. Anteriormente, quando estudamos os vetores, nós utilizamos as funções (map), (filter) e (reduce), que trabalham com coleções. Um mapa, ou hashmap, também é uma coleção, então também podemos aplicar essas funções a ele.
+Para continuarmos trabalhando com mapas, uma estrutura muito utilizada em Clojure, criaremos um novo arquivo aula6.clj com o namespace introductionFuncionalProgramming.curso.aula6. Anteriormente, quando estudamos os vetores, nós utilizamos as funções (map), (filter) e (reduce), que trabalham com coleções. Um mapa, ou hashmap, também é uma coleção, então também podemos aplicar essas funções a ele.
 
 Começaremos nossos testes criando um novo pedido com o mesmo conteúdo do que fizemos na aula anterior. A ideia agora é fazermos um (map) sobre os elementos desse pedido. Quando estamos explorando o mecanismo por trás das funções, é comum definirmos nós mesmos uma função para entendermos como ocorre a iteração entre os valores da nossa coleção.
 
@@ -1491,7 +1491,7 @@ valor clojure.lang.MapEntry [:camiseta {:quantidade 3, :preco 40}]
 
 Syntax error (ArityException) compiling at (aula6.clj:16:1).
 
-Wrong number of args (1) passed to: curso.aula6/imprime-e-15
+Wrong number of args (1) passed to: introductionFuncionalProgramming.curso.aula6/imprime-e-15
 
 (
 
@@ -1718,7 +1718,7 @@ Repare que, como dissemos anteriormente, pago? não é uma função, mas sim um 
 
 # CONCLUSAO
 
-Parabéns, você concluiu o primeiro curso de introdução à linguagem Clojure! Vamos recapitular os assuntos que vimos ao longo desse treinamento?
+Parabéns, você concluiu o primeiro introductionFuncionalProgramming.curso de introdução à linguagem Clojure! Vamos recapitular os assuntos que vimos ao longo desse treinamento?
 
 Começamos falando sobre a sintaxe da linguagem, invocando funções e aprendendo que isso ocorre de maneira um pouco diferente do que estamos acostumados em outras linguagens. Nesse ponto, aprendemos que é possível criar símbolos e atribuir valores a eles, sejam eles números escalares, strings ou mesmo funções - inclusive, é possível passar uma função como parâmetro de outra função, o que chamamos de high order functions.
 

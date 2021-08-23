@@ -360,3 +360,142 @@ Aprendemos também a criar símbolos locais, trabalhar com condicionais, isolar 
 Mais adiante, trabalhamos não só com mapas simples, de "uma dimensão", como também com mapas mais complexos, cujos valores são outros mapas. Ao longo desse processo, questões de boas práticas, legibilidade e como trabalhar com funções foram aparecendo e sendo discutidas.
 
 Agora que temos uma noção melhor da linguagem, conseguiremos conectar esses aprendizados com os nossos conhecimentos de estrutura de dados, algoritmos e outros conteúdos, de modo a utilizarmos as estruturas corretas no momento adequado para trazer os benefícios desejados. Nos cursos futuros, conheceremos ainda outros benefícios de trabalhar com o Clojure.
+
+
+
+# Módulo: Clojure: Coleções no dia a dia
+
+## Aula 1 Recursão e recursão de cauda
+
+#### - Implementando um map na unha com recursão
+
+
+    (defn meu-mapa
+    [funcao sequencia]
+    (let [primeiro (first sequencia)]
+    (if (not(nil? primeiro))
+    (do
+    (funcao primeiro)
+    (meu-mapa funcao(rest sequencia))))))
+    
+    (meu-mapa println ["daniela" "guilherme" "carlos" "paulo" "lucia" "ana"])
+    (meu-mapa println ["daniela" false "carlos" "paulo" "lucia" "ana"])
+
+#### - Tail recursion
+
+
+    (defn meu-mapa
+    [funcao sequencia]
+    (let [primeiro (first sequencia)]
+    (if (not(nil? primeiro))
+    (do
+    (funcao primeiro)
+    (recur funcao (rest sequencia))))))
+
+  (meu-mapa println (range1000))
+
+
+##### * Como o map funciona;
+
+
+##### * Utilizar a função first para pegar o primeiro elemento;
+
+
+##### * Utilizar a função rest para pegar a partir do segundo elemento;
+
+
+
+##### * Utilizar a função next para pegar o próximo elemento;
+
+
+
+##### * Utilizar a função seq para ver a sequência de elementos;
+
+
+
+##### * Utilizar a função do para rodar tudo que está dentro do if;
+
+
+##### * Fazer recursão;
+
+
+
+##### * Utilizar a função recur para dizer que estamos fazendo uma recursão.
+
+
+
+
+## Aula 2 Aridade e loops
+
+#### - Nosso count e múltiplas variações;
+
+    (dfn minha funcao
+        ([parametro1] (println "p1" parametro1))
+        ([paremetro1 parametro2] (println "p2" parametro1 parametro2)))
+
+
+#### - Loop e sua desvantagem;
+
+
+    ; for total-ate-agora 0, elementos-restantes elementos-restantes   ;; 1 next
+    
+    (defn conta
+    [elementos]
+    (loop [total-ate-agora 0
+    elementos-restantes elementos]
+    (if (seq elementos-restantes)
+    (recur (omc total-ate-agora) (next elementos-restantes))
+    total-ate-agora)))
+    
+    (println (conta ["daniela" "guilherme" "carlos" "paulo" "lucia" "ana"]))
+    (println (conta []))
+
+##### * Como o reduce funciona;
+
+
+##### * Implementar o reduce;
+
+
+##### * Variação de parâmetros na função;
+
+
+##### * Utilizar o loop;
+
+
+##### * Fazer recorrência dentro do loop;
+
+
+
+## Aula 3 Outras funções com maps
+
+#### - Agrupando e trabalhando em esquemas de mapas mais complexos;
+
+    (println (group-by :usuario (l.db/todos-os-pedidos)))
+
+##### * Simular um banco em memória;
+
+    db.clj
+
+##### * Utilizar o require para fazer a importação de classe;
+
+    (ns clojure.collections.aula3
+    (:require [clojure.collections.db :as l.db]))
+
+
+##### * Utilizar um as para abreviação;
+
+##### * Agrupar dados;
+
+
+## Aula 3 Outras funções com maps
+
+#### - Agrupando e trabalhando em esquemas de mapas mais complexos;
+
+
+
+## Aula 4 Ordem e ordenação
+
+#### - Ordenação, reverse, extraindo lógica
+
+#### - First, second, nth, get em lista, take
+
